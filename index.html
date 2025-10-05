@@ -1,0 +1,263 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>zoASHro // Developer &amp; AI Enthusiast</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&amp;family=Yuji+Syuku&amp;family=Source+Serif+Pro:wght@400;600&amp;display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Gothic Dark x Japanese Palette */
+            --background-color: #121212; /* Charcoal Black */
+            --text-color: #d1d1d1; /* Bone White */
+            --primary-color: #9a0000; /* Blood Red */
+            --accent-color: #4a0072; /* Deep Violet */
+            --border-color: rgba(154, 0, 0, 0.3);
+            --card-bg: #1a1a1a;
+            --font-main-heading: 'Yuji Syuku', serif; /* Japanese Calligraphy */
+            --font-sub-heading: 'Cinzel', serif;     /* Gothic/Roman Serif */
+            --font-body: 'Source Serif Pro', serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--background-color);
+            color: var(--text-color);
+            background-image: 
+                radial-gradient(circle at top right, rgba(154, 0, 0, 0.1), transparent 40%),
+                radial-gradient(circle at bottom left, rgba(74, 0, 114, 0.1), transparent 50%);
+            background-attachment: fixed;
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        section[id] { scroll-margin-top: 6rem; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 1.5rem; }
+
+        /* --- Header & Navigation --- */
+        .site-header {
+            background-color: rgba(18, 18, 18, 0.7);
+            backdrop-filter: blur(10px);
+            position: sticky; top: 0; z-index: 50;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .header-container { display: flex; align-items: center; justify-content: space-between; padding: 1.5rem 0; }
+        .logo { font-family: var(--font-sub-heading); font-weight: 700; font-size: 1.5rem; color: var(--text-color); text-decoration: none; letter-spacing: 1px; }
+        .logo span { color: var(--primary-color); }
+        .desktop-nav { display: none; }
+        .nav-link { color: var(--text-color); text-decoration: none; transition: all 0.2s ease; padding: 0.5rem; font-family: var(--font-sub-heading); font-weight: 400; }
+        .nav-link:hover { color: var(--primary-color); text-shadow: 0 0 5px var(--primary-color); }
+
+        /* Mobile Menu */
+        .menu-toggle-checkbox { display: none; }
+        .menu-toggle-label { cursor: pointer; z-index: 1000; }
+        .menu-icon { width: 28px; height: 28px; color: var(--text-color); }
+        .mobile-menu { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background-color: #121212; transform: translateX(-100%); transition: transform 0.3s ease-in-out; display: flex; flex-direction: column; align-items: center; justify-content: center; z-index: 999; }
+        #menu-toggle:checked ~ .mobile-menu { transform: translateX(0); }
+        .mobile-nav { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2rem; }
+        .nav-link-mobile { color: var(--text-color); text-decoration: none; font-family: var(--font-main-heading); font-size: 2rem; transition: color 0.3s; }
+        .nav-link-mobile:hover { color: var(--primary-color); }
+        .close-icon { position: absolute; top: 2rem; right: 1.5rem; cursor: pointer; color: var(--text-color); width: 28px; height: 28px; }
+
+        /* --- Main Content & Hero --- */
+        .main-content { padding: 5rem 0; }
+        .content-section { margin-bottom: 7rem; }
+        .hero-section { text-align: center; margin-bottom: 8rem; display: flex; flex-direction: column; align-items: center; }
+        
+        .profile-pic {
+            width: 200px; height: 250px;
+            border-radius: 9999px;
+            object-fit: cover;
+            display: block;
+            border: 3px solid var(--primary-color);
+            padding: 5px;
+            background-color: var(--background-color);
+            margin-bottom: 2.5rem;
+            filter: grayscale(50%) contrast(1.1);
+            box-shadow: 0 0 15px rgba(154, 0, 0, 0.4);
+        }
+
+        .hero-title { font-family: var(--font-main-heading); font-size: 4rem; color: var(--text-color); margin-bottom: 1.5rem; font-weight: 400; text-shadow: 0 0 10px rgba(154, 0, 0, 0.5); }
+        .hero-subtitle { font-family: var(--font-sub-heading); font-size: 1.25rem; font-weight: 400; color: var(--text-color); max-width: 40ch; letter-spacing: 1px; }
+
+        /* --- Reusable Components: Gothic Cards --- */
+        .section-heading { font-family: var(--font-main-heading); font-size: 2.5rem; text-align: center; margin-bottom: 3rem; color: var(--text-color); font-weight: 400; }
+        .section-heading span { color: var(--primary-color); }
+        .section-card { background-color: var(--card-bg); border: 1px solid var(--border-color); box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.5); padding: 2rem; margin-bottom: 2rem; transition: all 0.3s ease; border-radius: 4px; position: relative; }
+        .section-card:hover { border-color: var(--primary-color); }
+        
+        .highlight { color: var(--primary-color); font-weight: 600; }
+
+        /* --- Section Specifics --- */
+        .skills-grid { display: grid; grid-template-columns: repeat(1, 1fr); gap: 2rem; }
+        .tags-container { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.5rem; }
+        .skill-tag { background-color: transparent; color: var(--text-color); border: 1px solid var(--border-color); padding: 0.25rem 1rem; font-size: 0.875rem; font-weight: 400; border-radius: 4px; transition: all 0.3s; }
+        .skill-tag:hover { background-color: var(--primary-color); border-color: var(--primary-color); color: white; }
+        .card-title { font-family: var(--font-sub-heading); font-weight: 700; font-size: 1.25rem; color: var(--text-color); margin-bottom: 1rem; }
+        
+        .list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1.25rem; }
+        .list li { position: relative; padding-left: 2rem; }
+        .list li::before { content: '†'; font-family: serif; position: absolute; left: 0; top: 0; color: var(--primary-color); font-weight: 600; }
+        
+        .connect-section { text-align: center; }
+        .connect-text { color: var(--text-color); margin-bottom: 2rem; max-width: 45rem; margin: 0 auto 2.5rem; }
+        .social-icons { display: flex; justify-content: center; gap: 2rem; }
+        .social-icon svg { width: 1.75rem; height: 1.75rem; color: var(--text-color); opacity: 0.7; transition: all 0.3s ease; }
+        .social-icon:hover svg { color: var(--primary-color); opacity: 1; transform: scale(1.1) translateY(-3px); filter: drop-shadow(0 0 5px var(--primary-color)); }
+
+        /* --- Footer --- */
+        .site-footer { border-top: 1px solid var(--border-color); margin-top: 5rem; }
+        .footer-container { padding: 2rem 0; text-align: center; color: var(--text-color); opacity: 0.6; font-size: 0.875rem; }
+
+        /* --- Media Queries --- */
+        @media (min-width: 768px) {
+            .menu-toggle-label { display: none; }
+            .mobile-menu { display: none; }
+            .desktop-nav { display: flex; gap: 1.5rem; }
+            .hero-title { font-size: 5rem; }
+            .skills-grid { grid-template-columns: repeat(3, 1fr); }
+            .section-card { padding: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="#" class="logo">zoASH<span>ro</span></a>
+            
+            <nav class="desktop-nav">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#codex" class="nav-link">Codex</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#path" class="nav-link">Path</a>
+                <a href="#connect" class="nav-link">Connect</a>
+            </nav>
+
+            <input type="checkbox" id="menu-toggle" class="menu-toggle-checkbox">
+            <label for="menu-toggle" class="menu-toggle-label">
+                <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </label>
+            <div class="mobile-menu">
+                 <label for="menu-toggle" class="close-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                 </label>
+                <nav class="mobile-nav">
+                     <a href="#about" class="nav-link-mobile">About</a>
+                     <a href="#codex" class="nav-link-mobile">Codex</a>
+                     <a href="#skills" class="nav-link-mobile">Skills</a>
+                     <a href="#path" class="nav-link-mobile">Path</a>
+                     <a href="#connect" class="nav-link-mobile">Connect</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container main-content">
+
+        <section id="hero" class="hero-section">
+            <img src="pic2.jpg" alt="zoASHro initial" class="profile-pic">
+            <h1 class="hero-title">AshdeepSingh <span style="color: var(--primary-color);";>(zoASHro)</span></h1>
+            <p class="hero-subtitle">Developer &amp; AI Enthusiast</p>
+        </section>
+
+        <section id="about" class="content-section">
+            <h2 class="section-heading"><span>壱 //</span> About</h2>
+            <div class="section-card">
+                <p>
+                    A developer forging a path through the disciplines of <span class="highlight">Python and C++</span>. My focus is the synthesis of technology and data, with a deep intellectual curiosity for <span class="highlight">AI, Machine Learning, and GenAI</span>. I am building a formidable foundation, with the ultimate ambition of applying these skills to the volatile, high-stakes arena of <span class="highlight">quantitative finance and HFT.</span>
+                </p>
+            </div>
+        </section>
+
+        <section id="codex" class="content-section">
+            <h2 class="section-heading"><span>弐 //</span> My Codex</h2>
+            <div class="section-card">
+                <ul class="list">
+                    <li><strong>Foundations First:</strong> Building robust skills by mastering C++ and Python, focusing on performance and clean architecture.</li>
+                    <li><strong>Project-Driven Learning:</strong> Applying theoretical knowledge to practical projects in AI, ML, and Data Science to accelerate growth.</li>
+                    <li><strong>Future-Focused:</strong> Strategically learning technologies and concepts that bridge the gap between software development and quantitative trading.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="skills" class="content-section">
+            <h2 class="section-heading"><span>参 //</span> Skillset</h2>
+            <div class="skills-grid">
+                <div class="section-card">
+                    <h3 class="card-title">Programming &amp; Tech</h3>
+                    <div class="tags-container">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">C++ (Learning)</span>
+                        <span class="skill-tag">Data Science</span>
+                        <span class="skill-tag">HTML/CSS</span>
+                    </div>
+                </div>
+                <div class="section-card">
+                    <h3 class="card-title">AI/ML &amp; Data Science</h3>
+                    <div class="tags-container">
+                        <span class="skill-tag">Machine Learning</span>
+                        <span class="skill-tag">GenAI</span>
+                        <span class="skill-tag">Deep Learning</span>
+                        <span class="skill-tag">Data Analysis</span>
+                    </div>
+                </div>
+                <div class="section-card">
+                     <h3 class="card-title">Future Ambitions</h3>
+                    <div class="tags-container">
+                         <span class="skill-tag">High-Frequency Trading</span>
+                         <span class="skill-tag">Quantitative Finance</span>
+                         <span class="skill-tag">Algorithmic Strategy</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="path" class="content-section">
+            <h2 class="section-heading"><span>肆 //</span> The Path</h2>
+             <div class="section-card">
+                 <ul class="list">
+                    <li><strong>Mastering Core Languages:</strong> Intensive focus on C++ for performance and system-level understanding, alongside deepening Python expertise for AI/ML applications.</li>
+                    <li><strong>Building AI/ML Portfolio:</strong> Actively developing projects in GenAI and Data Science to build a portfolio of practical, impactful work.</li>
+                    <li><strong>Exploring Quant Finance:</strong> Studying the mathematical and computational foundations of HFT and quantitative trading to prepare for a future in the field.</li>
+                 </ul>
+            </div>
+        </section>
+
+        <section id="connect" class="content-section">
+            <h2 class="section-heading"><span>伍 //</span> Connect</h2>
+            <div class="connect-section">
+                <p class="connect-text">Seeking collaboration and conversation with those passionate about technology and finance. Let's build something impactful.</p>
+                <div class="social-icons">
+                    <a href="https://linkedin.com/in/ashdeep-singh-c0d0" target="_blank" class="social-icon" title="LinkedIn">
+                        <svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clip-rule="evenodd"></path></svg>
+                    </a>
+                     <a href="https://github.com/S1i2n3g4h5/" target="_blank" class="social-icon" title="GitHub">
+                        <svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.419 2.865 8.166 6.839 9.49.5.09.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.604-3.369-1.342-3.369-1.342-.454-1.156-1.11-1.465-1.11-1.465-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.112-4.555-4.943 0-1.091.39-1.984 1.03-2.682-.103-.253-.446-1.27.098-2.645 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.82c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.375.201 2.392.1 2.645.64.698 1.03 1.59 1.03 2.682 0 3.841-2.339 4.688-4.566 4.935.359.308.678.92.678 1.852 0 1.338-.012 2.419-.012 2.746 0 .267.18.577.688.48C19.135 20.165 22 16.418 22 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd"></path></svg>
+                    </a>
+                     <a href="mailto:singh.ashdeep.2006@gmail.com" class="social-icon" title="Email">
+                        <svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884zM18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path></svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container footer-container">
+            <p>zoASHro © 2025</p>
+        </div>
+    </footer>
+    
+    
+
+
+</body>
