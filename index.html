@@ -8,10 +8,10 @@
     <style>
         :root {
             /* Gothic Dark x Japanese Palette */
-            --background-color: #121212; /* Charcoal Black */
-            --text-color: #d1d1d1; /* Bone White */
-            --primary-color: #9a0000; /* Blood Red */
-            --accent-color: #4a0072; /* Deep Violet */
+            --background-color: #121212; 
+            --text-color: #d1d1d1; 
+            --primary-color: #9a0000; 
+            --accent-color: #4a0072; 
             --border-color: rgba(154, 0, 0, 0.3);
             --card-bg: #1a1a1a;
             --font-main-heading: 'Yuji Syuku', serif; /* Japanese Calligraphy */
@@ -35,9 +35,12 @@
             overflow-x: hidden;
         }
 
+        
         section[id] { scroll-margin-top: 6rem; }
         .container { max-width: 1000px; margin: 0 auto; padding: 0 1.5rem; }
 
+
+        
         /* --- Header & Navigation --- */
         .site-header {
             background-color: rgba(18, 18, 18, 0.7);
@@ -52,6 +55,8 @@
         .nav-link { color: var(--text-color); text-decoration: none; transition: all 0.2s ease; padding: 0.5rem; font-family: var(--font-sub-heading); font-weight: 400; }
         .nav-link:hover { color: var(--primary-color); text-shadow: 0 0 5px var(--primary-color); }
 
+
+        
         /* Mobile Menu */
         .menu-toggle-checkbox { display: none; }
         .menu-toggle-label { cursor: pointer; z-index: 1000; }
@@ -63,6 +68,8 @@
         .nav-link-mobile:hover { color: var(--primary-color); }
         .close-icon { position: absolute; top: 2rem; right: 1.5rem; cursor: pointer; color: var(--text-color); width: 28px; height: 28px; }
 
+
+        
         /* --- Main Content & Hero --- */
         .main-content { padding: 5rem 0; }
         .content-section { margin-bottom: 7rem; }
@@ -84,6 +91,8 @@
         .hero-title { font-family: var(--font-main-heading); font-size: 4rem; color: var(--text-color); margin-bottom: 1.5rem; font-weight: 400; text-shadow: 0 0 10px rgba(154, 0, 0, 0.5); }
         .hero-subtitle { font-family: var(--font-sub-heading); font-size: 1.25rem; font-weight: 400; color: var(--text-color); max-width: 40ch; letter-spacing: 1px; }
 
+
+        
         /* --- Reusable Components: Gothic Cards --- */
         .section-heading { font-family: var(--font-main-heading); font-size: 2.5rem; text-align: center; margin-bottom: 3rem; color: var(--text-color); font-weight: 400; }
         .section-heading span { color: var(--primary-color); }
@@ -92,6 +101,8 @@
         
         .highlight { color: var(--primary-color); font-weight: 600; }
 
+
+        
         /* --- Section Specifics --- */
         .skills-grid { display: grid; grid-template-columns: repeat(1, 1fr); gap: 2rem; }
         .tags-container { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.5rem; }
@@ -109,10 +120,12 @@
         .social-icon svg { width: 1.75rem; height: 1.75rem; color: var(--text-color); opacity: 0.7; transition: all 0.3s ease; }
         .social-icon:hover svg { color: var(--primary-color); opacity: 1; transform: scale(1.1) translateY(-3px); filter: drop-shadow(0 0 5px var(--primary-color)); }
 
+        
         /* --- Footer --- */
         .site-footer { border-top: 1px solid var(--border-color); margin-top: 5rem; }
         .footer-container { padding: 2rem 0; text-align: center; color: var(--text-color); opacity: 0.6; font-size: 0.875rem; }
 
+        
         /* --- Media Queries --- */
         @media (min-width: 768px) {
             .menu-toggle-label { display: none; }
@@ -126,6 +139,7 @@
 </head>
 <body>
 
+    
     <!-- Header & Navigation -->
     <header class="site-header">
         <div class="container header-container">
@@ -158,6 +172,7 @@
         </div>
     </header>
 
+    
     <!-- Main Content -->
     <main class="container main-content">
 
@@ -250,6 +265,8 @@
 
     </main>
 
+
+    
     <!-- Footer -->
     <footer class="site-footer">
         <div class="container footer-container">
@@ -262,4 +279,5 @@
 
 
 </body>
+
 
