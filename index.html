@@ -1,7 +1,9 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>zoASHro // Developer &amp; AI Enthusiast</title>
+    <title>Ashdeep Singh // AI Specialist & Quantitative Developer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&amp;family=Yuji+Syuku&amp;family=Source+Serif+Pro:wght@400;600&amp;display=swap" rel="stylesheet">
@@ -34,13 +36,11 @@
             line-height: 1.8;
             overflow-x: hidden;
         }
-
         
         section[id] { scroll-margin-top: 6rem; }
         .container { max-width: 1000px; margin: 0 auto; padding: 0 1.5rem; }
 
 
-        
         /* --- Header & Navigation --- */
         .site-header {
             background-color: rgba(18, 18, 18, 0.7);
@@ -48,7 +48,7 @@
             position: sticky; top: 0; z-index: 50;
             border-bottom: 1px solid var(--border-color);
         }
-        .header-container { display: flex; align-items: center; justify-content: space-between; padding: 1.5rem 0; }
+        .header-container { display: flex; align-items: center; justify-content: space-between; height: 5rem; }
         .logo { font-family: var(--font-sub-heading); font-weight: 700; font-size: 1.5rem; color: var(--text-color); text-decoration: none; letter-spacing: 1px; }
         .logo span { color: var(--primary-color); }
         .desktop-nav { display: none; }
@@ -56,7 +56,6 @@
         .nav-link:hover { color: var(--primary-color); text-shadow: 0 0 5px var(--primary-color); }
 
 
-        
         /* Mobile Menu */
         .menu-toggle-checkbox { display: none; }
         .menu-toggle-label { cursor: pointer; z-index: 1000; }
@@ -66,10 +65,9 @@
         .mobile-nav { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2rem; }
         .nav-link-mobile { color: var(--text-color); text-decoration: none; font-family: var(--font-main-heading); font-size: 2rem; transition: color 0.3s; }
         .nav-link-mobile:hover { color: var(--primary-color); }
-        .close-icon { position: absolute; top: 2rem; right: 1.5rem; cursor: pointer; color: var(--text-color); width: 28px; height: 28px; }
+        .close-icon { position: absolute; top: 2.1rem; right: 1.5rem; cursor: pointer; color: var(--text-color); width: 28px; height: 28px; }
 
 
-        
         /* --- Main Content & Hero --- */
         .main-content { padding: 5rem 0; }
         .content-section { margin-bottom: 7rem; }
@@ -77,8 +75,9 @@
         
         .profile-pic {
             width: 200px; height: 250px;
-            border-radius: 9999px;
+            border-radius: 5px;
             object-fit: cover;
+            object-position: center;
             display: block;
             border: 3px solid var(--primary-color);
             padding: 5px;
@@ -89,27 +88,26 @@
         }
 
         .hero-title { font-family: var(--font-main-heading); font-size: 4rem; color: var(--text-color); margin-bottom: 1.5rem; font-weight: 400; text-shadow: 0 0 10px rgba(154, 0, 0, 0.5); }
-        .hero-subtitle { font-family: var(--font-sub-heading); font-size: 1.25rem; font-weight: 400; color: var(--text-color); max-width: 40ch; letter-spacing: 1px; }
+        .hero-subtitle { font-family: var(--font-sub-heading); font-size: 1.25rem; font-weight: 400; color: var(--text-color); max-width: 50ch; letter-spacing: 1px; }
 
 
-        
         /* --- Reusable Components: Gothic Cards --- */
         .section-heading { font-family: var(--font-main-heading); font-size: 2.5rem; text-align: center; margin-bottom: 3rem; color: var(--text-color); font-weight: 400; }
         .section-heading span { color: var(--primary-color); }
         .section-card { background-color: var(--card-bg); border: 1px solid var(--border-color); box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.5); padding: 2rem; margin-bottom: 2rem; transition: all 0.3s ease; border-radius: 4px; position: relative; }
-        .section-card:hover { border-color: var(--primary-color); }
+        .section-card:hover { border-color: var(--primary-color); transform: translateY(-5px); }
         
         .highlight { color: var(--primary-color); font-weight: 600; }
 
 
-        
         /* --- Section Specifics --- */
-        .skills-grid { display: grid; grid-template-columns: repeat(1, 1fr); gap: 2rem; }
+        .skills-grid, .projects-grid { display: grid; grid-template-columns: repeat(1, 1fr); gap: 2rem; }
         .tags-container { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.5rem; }
         .skill-tag { background-color: transparent; color: var(--text-color); border: 1px solid var(--border-color); padding: 0.25rem 1rem; font-size: 0.875rem; font-weight: 400; border-radius: 4px; transition: all 0.3s; }
         .skill-tag:hover { background-color: var(--primary-color); border-color: var(--primary-color); color: white; }
-        .card-title { font-family: var(--font-sub-heading); font-weight: 700; font-size: 1.25rem; color: var(--text-color); margin-bottom: 1rem; }
-        
+        .card-title { font-family: var(--font-sub-heading); font-weight: 700; font-size: 1.25rem; color: var(--text-color); margin-bottom: 0.25rem; }
+        .card-subtitle { font-family: var(--font-body); font-size: 0.9rem; color: var(--text-color); opacity: 0.7; margin-bottom: 1.5rem; }
+
         .list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1.25rem; }
         .list li { position: relative; padding-left: 2rem; }
         .list li::before { content: '†'; font-family: serif; position: absolute; left: 0; top: 0; color: var(--primary-color); font-weight: 600; }
@@ -133,23 +131,21 @@
             .desktop-nav { display: flex; gap: 1.5rem; }
             .hero-title { font-size: 5rem; }
             .skills-grid { grid-template-columns: repeat(3, 1fr); }
+            .projects-grid { grid-template-columns: repeat(2, 1fr); }
             .section-card { padding: 2.5rem; }
         }
     </style>
 </head>
 <body>
-
-    
-    <!-- Header & Navigation -->
     <header class="site-header">
         <div class="container header-container">
-            <a href="#" class="logo">zoASH<span>ro</span></a>
+            <a href="#" class="logo">ASH<span>DEEP</span></a>
             
             <nav class="desktop-nav">
-                <a href="#about" class="nav-link">About</a>
-                <a href="#codex" class="nav-link">Codex</a>
-                <a href="#skills" class="nav-link">Skills</a>
-                <a href="#path" class="nav-link">Path</a>
+                <a href="#mission" class="nav-link">Mission</a>
+                <a href="#history" class="nav-link">History</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#arsenal" class="nav-link">Arsenal</a>
                 <a href="#connect" class="nav-link">Connect</a>
             </nav>
 
@@ -159,125 +155,141 @@
             </label>
             <div class="mobile-menu">
                  <label for="menu-toggle" class="close-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
                  </label>
                 <nav class="mobile-nav">
-                     <a href="#about" class="nav-link-mobile">About</a>
-                     <a href="#codex" class="nav-link-mobile">Codex</a>
-                     <a href="#skills" class="nav-link-mobile">Skills</a>
-                     <a href="#path" class="nav-link-mobile">Path</a>
-                     <a href="#connect" class="nav-link-mobile">Connect</a>
+                    <a href="#mission" class="nav-link-mobile">Mission</a>
+                    <a href="#history" class="nav-link-mobile">History</a>
+                    <a href="#projects" class="nav-link-mobile">Projects</a>
+                    <a href="#arsenal" class="nav-link-mobile">Arsenal</a>
+                    <a href="#connect" class="nav-link-mobile">Connect</a>
                 </nav>
             </div>
         </div>
     </header>
 
-    
-    <!-- Main Content -->
     <main class="container main-content">
 
         <section id="hero" class="hero-section">
-            <img src="pic2.jpg" alt="zoASHro initial" class="profile-pic">
-            <h1 class="hero-title">AshdeepSingh <span style="color: var(--primary-color);";>(zoASHro)</span></h1>
-            <p class="hero-subtitle">Developer &amp; AI Enthusiast</p>
+            <img src="pic2.jpg" alt="Ashdeep Singh profile" class="profile-pic">
+            <h1 class="hero-title">Ashdeep Singh</h1>
+            <p class="hero-subtitle">Architect of Intelligent Systems for High-Stakes Quantitative Environments.</p>
         </section>
 
-        <section id="about" class="content-section">
-            <h2 class="section-heading"><span>壱 //</span> About</h2>
+        <section id="mission" class="content-section">
+            <h2 class="section-heading"><span>壱 //</span> Mission</h2>
             <div class="section-card">
                 <p>
-                    A developer forging a path through the disciplines of <span class="highlight">Python and C++</span>. My focus is the synthesis of technology and data, with a deep intellectual curiosity for <span class="highlight">AI, Machine Learning, and GenAI</span>. I am building a formidable foundation, with the ultimate ambition of applying these skills to the volatile, high-stakes arena of <span class="highlight">AI, Data Science and HFT.</span>
+                    My professional mission is to master complexity. I design and deploy scalable, data-driven solutions that thrive under pressure. By synthesizing <span class="highlight">high-performance programming</span> with <span class="highlight">advanced artificial intelligence</span>, I build systems that are not only efficient but decisive.
+                </p>
+                <p>
+                    The objective is to deliver measurable results in environments where precision and speed are paramount. My focus is exclusively on the <span class="highlight">FinTech and quantitative finance</span> sectors, where technology creates a definitive competitive edge.
                 </p>
             </div>
         </section>
 
-        <section id="codex" class="content-section">
-            <h2 class="section-heading"><span>弐 //</span> My Codex</h2>
+        <section id="history" class="content-section">
+            <h2 class="section-heading"><span>弐 //</span> Professional History</h2>
             <div class="section-card">
+                <h3 class="card-title">Junior Python Developer</h3>
+                <p class="card-subtitle">Techrefic Technologies | Sep 2022 - Aug 2023</p>
                 <ul class="list">
-                    <li><strong>Foundations First:</strong> Building robust skills by mastering C++ and Python, focusing on performance and clean architecture.</li>
-                    <li><strong>Project-Driven Learning:</strong> Applying theoretical knowledge to practical projects in AI, ML, and Data Science to accelerate growth.</li>
-                    <li><strong>Future-Focused:</strong> Strategically learning technologies and concepts that bridge the gap between software development and quantitative trading.</li>
+                    <li>Achieved <span class="highlight">99.8% data accuracy</span> across 5M+ records by engineering robust validation and cleaning pipelines.</li>
+                    <li>Increased ML model performance by up to <span class="highlight">30%</span> through advanced hyperparameter tuning and feature engineering.</li>
+                    <li>Led the deployment of algorithmic trading strategies, integrating custom risk thresholds and market constraints.</li>
+                </ul>
+            </div>
+            <div class="section-card">
+                <h3 class="card-title">Python Developer Intern</h3>
+                <p class="card-subtitle">Techrefic Technologies | Jan 2020 - Aug 2022</p>
+                <ul class="list">
+                    <li>Reduced manual data analysis workloads by <span class="highlight">40%</span> by architecting and deploying Python automation scripts.</li>
+                    <li>Constructed and maintained mission-critical RESTful APIs to guarantee seamless data flow between services.</li>
                 </ul>
             </div>
         </section>
 
-        <section id="skills" class="content-section">
-            <h2 class="section-heading"><span>参 //</span> Skillset</h2>
-            <div class="skills-grid">
+        <section id="projects" class="content-section">
+            <h2 class="section-heading"><span>参 //</span> Impactful Projects</h2>
+            <div class="projects-grid">
                 <div class="section-card">
-                    <h3 class="card-title">Programming &amp; Tech</h3>
+                    <h3 class="card-title">Algorithmic Trading Engine</h3>
+                    <p>An automated system built to capture market opportunities with algorithmic precision. The platform's backtesting engine cuts manual strategy evaluation by 60%.</p>
                     <div class="tags-container">
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">C++ (Learning)</span>
-                        <span class="skill-tag">Data Science</span>
-                        <span class="skill-tag">HTML/CSS</span>
+                        <span class="skill-tag">Python</span><span class="skill-tag">Machine Learning</span><span class="skill-tag">Backtesting</span>
                     </div>
                 </div>
                 <div class="section-card">
-                    <h3 class="card-title">AI/ML &amp; Data Science</h3>
+                    <h3 class="card-title">Industrial Safety Protocol</h3>
+                    <p>A critical safety system engineered to prevent industrial accidents. It uses real-time computer vision to monitor safety zones, reducing incident risk by ~80% in simulations.</p>
                     <div class="tags-container">
-                        <span class="skill-tag">Machine Learning</span>
-                        <span class="skill-tag">GenAI</span>
-                        <span class="skill-tag">Deep Learning</span>
-                        <span class="skill-tag">MLOPS</span>
+                        <span class="skill-tag">Python</span><span class="skill-tag">OpenCV</span><span class="skill-tag">Computer Vision</span>
                     </div>
                 </div>
                 <div class="section-card">
-                     <h3 class="card-title">Future Ambitions</h3>
+                    <h3 class="card-title">Logistics Optimization System</h3>
+                    <p>An urban mobility solution that predicts taxi demand using time-series forecasting. The system's insights enabled a 15% reduction in average passenger wait times.</p>
                     <div class="tags-container">
-                         <span class="skill-tag">AI Engineering</span>
-                         <span class="skill-tag">Quantitative Finance</span>
-                         <span class="skill-tag">Data Science</span>
+                        <span class="skill-tag">Python</span><span class="skill-tag">Tableau</span><span class="skill-tag">Time Series</span>
+                    </div>
+                </div>
+                <div class="section-card">
+                    <h3 class="card-title">Intelligent Document Parser</h3>
+                    <p>A custom NLP model for information extraction from unstructured text. It achieved 84% precision and improved data matching accuracy by 13% across 100k+ documents.</p>
+                    <div class="tags-container">
+                        <span class="skill-tag">Python</span><span class="skill-tag">spaCy</span><span class="skill-tag">NLP</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="path" class="content-section">
-            <h2 class="section-heading"><span>肆 //</span> The Path</h2>
-             <div class="section-card">
-                 <ul class="list">
-                    <li><strong>Mastering Core Languages:</strong> Intensive focus on C++ for performance and system-level understanding, alongside deepening Python expertise for AI/ML applications.</li>
-                    <li><strong>Building AI/ML Portfolio:</strong> Actively developing projects in GenAI and Data Science to build a portfolio of practical, impactful work.</li>
-                    <li><strong>Exploring Quant Finance:</strong> Studying the mathematical and computational foundations of HFT and quantitative finance to prepare for a future in the field.</li>
-                 </ul>
+        <section id="arsenal" class="content-section">
+            <h2 class="section-heading"><span>肆 //</span> Technical Arsenal</h2>
+            <div class="skills-grid">
+                <div class="section-card">
+                    <h3 class="card-title">Data Science & ML</h3>
+                    <div class="tags-container">
+                        <span class="skill-tag">Machine Learning</span><span class="skill-tag">Deep Learning</span><span class="skill-tag">Computer Vision</span><span class="skill-tag">NLP</span><span class="skill-tag">LLMs</span><span class="skill-tag">LangChain</span><span class="skill-tag">TensorFlow</span><span class="skill-tag">Tableau</span>
+                    </div>
+                </div>
+                <div class="section-card">
+                    <h3 class="card-title">Languages & Databases</h3>
+                    <div class="tags-container">
+                        <span class="skill-tag">Python</span><span class="skill-tag">R</span><span class="skill-tag">C++ / C#</span><span class="skill-tag">SQL</span><span class="skill-tag">NoSQL</span><span class="skill-tag">D3.js</span>
+                    </div>
+                </div>
+                <div class="section-card">
+                     <h3 class="card-title">Cloud, DevOps & FinTech</h3>
+                    <div class="tags-container">
+                        <span class="skill-tag">AWS / GCP</span><span class="skill-tag">Docker</span><span class="skill-tag">Kubernetes</span><span class="skill-tag">CI/CD</span><span class="skill-tag">Algo Trading</span><span class="skill-tag">PineScript</span><span class="skill-tag">MQL5</span>
+                    </div>
+                </div>
             </div>
         </section>
 
         <section id="connect" class="content-section">
             <h2 class="section-heading"><span>伍 //</span> Connect</h2>
             <div class="connect-section">
-                <p class="connect-text">Seeking collaboration and conversation with those passionate about technology and finance. Let's build something impactful.</p>
+                <p class="connect-text">I am available for collaboration on challenging problems in technology and finance. If you are building something impactful, let's connect.</p>
                 <div class="social-icons">
-                    <a href="https://linkedin.com/in/ashdeep-singh-c0d0" target="_blank" class="social-icon" title="LinkedIn">
+                    <a href="https://linkedin.com/in/ashdeep-singh-6762391b1" target="_blank" class="social-icon" title="LinkedIn">
                         <svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clip-rule="evenodd"></path></svg>
                     </a>
-                     <a href="https://github.com/S1i2n3g4h5/" target="_blank" class="social-icon" title="GitHub">
+                    <a href="https://github.com/S1i2n3g4h5/" target="_blank" class="social-icon" title="GitHub">
                         <svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.419 2.865 8.166 6.839 9.49.5.09.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.604-3.369-1.342-3.369-1.342-.454-1.156-1.11-1.465-1.11-1.465-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.112-4.555-4.943 0-1.091.39-1.984 1.03-2.682-.103-.253-.446-1.27.098-2.645 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.82c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.375.201 2.392.1 2.645.64.698 1.03 1.59 1.03 2.682 0 3.841-2.339 4.688-4.566 4.935.359.308.678.92.678 1.852 0 1.338-.012 2.419-.012 2.746 0 .267.18.577.688.48C19.135 20.165 22 16.418 22 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd"></path></svg>
                     </a>
-                     <a href="mailto:singh.ashdeep.2006@gmail.com" class="social-icon" title="Email">
+                    <a href="mailto:singh.ashdeep.2006@gmail.com" class="social-icon" title="Email">
                         <svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884zM18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path></svg>
                     </a>
                 </div>
             </div>
         </section>
-
     </main>
 
-
-    
-    <!-- Footer -->
     <footer class="site-footer">
         <div class="container footer-container">
-            <p>zoASHro © 2025</p>
+            <p>Ashdeep Singh © 2025</p>
         </div>
     </footer>
-    
-    
-
-
-
 </body>
-
-
+</html>
